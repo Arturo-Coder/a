@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi niña Ximena 💌</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ffc0cb);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    color: #333;
+  }
+
+  h1 {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  }
+
+  .carta {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    min-height: 300px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    transition: all 0.5s ease;
+  }
+
+  .boton {
+    background: #ff1493;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .boton:hover {
+    background: #ff69b4;
+    transform: scale(1.05);
+  }
+
+  .corazon {
+    font-size: 40px;
+    animation: latido 1s infinite;
+  }
+
+  @keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+
+  .boton-final {
+    display: none;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+
+  .boton-final:hover {
+    background: #ff85c1;
+    transform: scale(1.1);
+  }
+
+  .mensaje {
+    display: none;
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+  <h1>💌 Para mi niña Ximena 💕</h1>
+  <div class="carta" id="carta">
+    <p id="texto"></p>
+  </div>
+  <button class="boton" id="boton">Abrir mi carta</button>
+  <button class="boton-final" id="botonFinal">💗 Te amo también</button>
+  <div class="mensaje" id="mensaje">Yo más, mi amor 💖</div>
+  <div class="corazon">❤️</div>
+
+  <script>
+    const texto = `Mi linda niña 💕\n\n
+hoy con lo que te conté me dieron ganas de escribirte esto se que son solo palabras pero van con mucho amor hacia ti
+mientras escribía esto llore se me salieron algunas lagrimas 
+
+nose por donde empezar...
+déjeme quedarme permíteme tener esa dicha de amarte sin condiciones sin dudas sin pausas déjame abrazar eso de lo que huyeron descubir eso que escondes por miedo y acariciar con calma esas cicatrices que duelan no vengo a prometerte que no habrá días malos días difíciles porque que es la vida sin esos días yo vengo a prometerte que no me iré con ellos no quiero ser quien pase por tu vida quiero ser quien se quede que gana cada espacio cada gesto y suspiro tuyo sin pedirlo a gritos sino con constancia quiero merecerte no por lo que fuiste ni por lo que temes si no por lo que eres ahora y siempre una historia que vale la pena leer con paciencia déjame enseñarte que no todo el amor viene con fracturas que no todos tocan para romper algo hermoso que hay también manos que sostienen miradas que no dudan y amores que no huyen cuando alguien tiene miedo quiero ser esa certeza en tu caos y ese refugio cuando no confíes ni en ti quiero que el amor que tengo  para darte derrumbe la idea de que amar siempre duele y si te cuesta creer en lo para siempre déjame enseñarte que si existe ese para siempre déjame enseñarte que los estoy aquí para ti también sana estoy dispuesto a ser suave y constante para nunca faltarte permíteme quedarme no como quien insiste si no como quien siente y lo siente de verdad con pasión con el alma con todo 
+estoy dispuesto a ser tal y como tu quieras que sea...
+
+"Tu eres mi camino y siempre vas a ser mi camino hay que hacer una elección bueno ahora te elijo te voy a seguir te voy a seguir a todas partes te voy a seguir el resto de mi vida" 💞\n\n
+Con todo mi amor — Arturo 💘`;
+
+    const p = document.getElementById("texto");
+    const boton = document.getElementById("boton");
+    const botonFinal = document.getElementById("botonFinal");
+    const mensaje = document.getElementById("mensaje");
+    let i = 0;
+
+    boton.addEventListener("click", () => {
+      boton.style.display = "none";
+      const intervalo = setInterval(() => {
+        if (i < texto.length) {
+          p.textContent += texto.charAt(i);
+          i++;
+        } else {
+          clearInterval(intervalo);
+          // Mostrar el botón final al terminar
+          botonFinal.style.display = "inline-block";
+        }
+      }, 40);
+    });
+
+    botonFinal.addEventListener("click", () => {
+      botonFinal.style.display = "none";
+      mensaje.style.display = "block";
+    });
+  </script>
+</body>
+</html>
+
